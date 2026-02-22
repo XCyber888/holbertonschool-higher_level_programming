@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-This module defines a Square class with a private instance attribute.
+This module defines a Square class with a private size attribute.
 
-The size of the square is a crucial property, and by making it private,
-we ensure that the internal state of the object is protected.
+The size of a square is a fundamental property, and making it private
+ensures that it can only be modified with proper validation in the future.
 """
 
 
@@ -12,7 +12,7 @@ class Square:
     A class that represents a square.
 
     Attributes:
-        __size (int): The width and height of the square.
+        __size (int): The size of the square's side (private).
     """
 
     def __init__(self, size):
