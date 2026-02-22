@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-This module provides a base definition for a Square class.
+This module defines a Square class.
 
-This is part of the Python - Classes and Objects project.
-The Square class defined here is currently empty.
+This module is part of a project to learn about classes and objects in Python.
+The Square class is currently empty as per the requirements of task 0.
 """
 
 
@@ -11,6 +11,6 @@ class Square:
     """
     An empty class that defines a square.
 
-    This class currently has no attributes or methods.
+    This class does not have any attributes or methods yet.
     """
     pass
