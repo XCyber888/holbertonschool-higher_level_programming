@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 """
-This module provides a basic definition of a Square class.
+This module provides a base definition for a Square class.
 
-The Square class is a fundamental part of this project, aimed at
-demonstrating the basics of Object-Oriented Programming in Python.
-This module does not perform any complex operations yet.
+It serves as the foundation for future square-related attributes and methods.
+The Square class defined here is currently empty.
 """
 
 
 class Square:
     """
-    A class used to represent a Square.
+    An empty class that defines a square.
 
-    The Square class is currently empty to satisfy the requirements
-    of the first task in the Python classes and objects project.
+    This class currently has no attributes or methods, but will be
+    expanded in subsequent tasks.
     """
     pass
