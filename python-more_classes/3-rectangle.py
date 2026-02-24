@@ -82,16 +82,16 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return string representation of rectangle with # characters.
+        """Return string representation with # characters.
 
         Returns:
-            str: rectangle made of # characters, or empty string if width/height is 0
+            str: rectangle made of #, empty if width/height is 0
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        rect_str = ""
+        rect = ""
         for i in range(self.__height):
-            rect_str += "#" * self.__width
+            rect += "#" * self.__width
             if i < self.__height - 1:
-                rect_str += "\n"
-        return rect_str
+                rect += "\n"
+        return rect
