@@ -95,11 +95,3 @@ class Rectangle:
             if i < self.__height - 1:
                 rect_str += "\n"
         return rect_str
-
-    def __repr__(self):
-        """Return official string representation of rectangle.
-
-        Returns:
-            str: string that can be used to recreate the object
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
