@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a class BaseGeometry.
+Module for BaseGeometry
 """
 
 
@@ -18,14 +18,6 @@ class BaseGeometry:
     def integer_validator(self, name, value):
         """
         Validates value as a positive integer.
-
-        Args:
-            name (str): The name associated with the value.
-            value (int): The value to validate.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less than or equal to 0.
         """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
