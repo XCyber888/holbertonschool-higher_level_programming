@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-This module defines a class BaseGeometry based on 6-base_geometry.py.
+This module defines a class BaseGeometry.
 """
 
 
 class BaseGeometry:
     """
-    A class representing base geometry with validation logic.
+    A class representing base geometry.
     """
 
     def area(self):
