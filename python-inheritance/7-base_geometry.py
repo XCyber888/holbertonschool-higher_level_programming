@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Module for BaseGeometry class.
-Defines a geometry class with an integer validator.
-"""
+"""Module for BaseGeometry class."""
 
 
 class BaseGeometry:
@@ -13,18 +10,8 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """
-        Validates value as a positive integer.
-
-        Args:
-            name (str): The name associated with the value.
-            value (int): The value to validate.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less or equal to 0.
-        """
+        """Validates value as a positive integer."""
         if type(value) is not int:
-            raise TypeError("/root/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py must be an integer".format(name))
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("/root/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py must be greater than 0".format(name))
+            raise ValueError("{} must be greater than 0".format(name))
