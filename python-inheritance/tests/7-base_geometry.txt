@@ -57,3 +57,46 @@ TypeError: age must be an integer
 >>> bg.integer_validator("age", None)
 Traceback (most recent call last):
 TypeError: age must be an integer
+
+>>> bg.integer_validator("age", 3.14)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", float('inf'))
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", float('nan'))
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", complex(1, 2))
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", b'123')
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", bytearray(5))
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", 2.5)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> print(type(bg))
+<class '7-base_geometry.BaseGeometry'>
+
+>>> print(hasattr(bg, 'integer_validator'))
+True
+
+>>> print(hasattr(bg, 'area'))
+True
+
+>>> print(callable(getattr(bg, 'integer_validator')))
+True
+
+>>> print(callable(getattr(bg, 'area')))
+True
