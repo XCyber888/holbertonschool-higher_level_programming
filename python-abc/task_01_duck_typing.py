@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-Module that defines an abstract Shape class and its subclasses
-Circle and Rectangle, demonstrating duck typing.
+This module defines an abstract Shape class and its subclasses.
+It demonstrates abstract base classes and duck typing.
 """
 from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
-    """Abstract class representing a geometric shape."""
+    """Abstract base class for all geometric shapes."""
 
     @abstractmethod
     def area(self):
@@ -55,9 +55,6 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-    """
-    Function that prints the area and perimeter of a shape
-    using duck typing.
-    """
+    """Print area and perimeter of a shape using duck typing."""
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
