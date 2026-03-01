@@ -2,12 +2,14 @@
 """
 Module for Shape, Circle, Rectangle and duck typing.
 """
+
 from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
     """Abstract class for Shape."""
+
     @abstractmethod
     def area(self):
         """Calculate area."""
@@ -21,6 +23,7 @@ class Shape(ABC):
 
 class Circle(Shape):
     """Circle class."""
+
     def __init__(self, radius):
         """Init Circle."""
         self.radius = radius
@@ -36,6 +39,7 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """Rectangle class."""
+
     def __init__(self, width, height):
         """Init Rectangle."""
         self.width = width
