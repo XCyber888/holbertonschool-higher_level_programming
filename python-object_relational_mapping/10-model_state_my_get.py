@@ -10,18 +10,19 @@ from model_state import Base, State
 
 
 if __name__ == "__main__":
-    # Engine və Session yaradılması
+    # Engine yaradılır, sətir uzunluğuna (PEP8) diqqət edilir
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    
+
+    # Session konfiqurasiyası
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Adı arqumentlə (sys.argv[4]) tam üst-üstə düşən ştatı axtarırıq
+    # .filter() daxilində arqumentin işlənməsi
     state = session.query(State).filter(State.name == sys.argv[4]).first()
 
-    # Nəticə varsa ID-ni çap edirik, yoxdursa "Not found"
-    if state:
+    # Nəticənin çapı
+    if state is not None:
         print("{}".format(state.id))
     else:
         print("Not found")
