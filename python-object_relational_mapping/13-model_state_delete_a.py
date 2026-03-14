@@ -19,13 +19,13 @@ if __name__ == "__main__":
     session = Session()
 
     # Adında 'a' hərfi olan bütün ştatları tapırıq
-    states_to_delete = session.query(State).filter(State.name.like('%a%')).all()
+    states = session.query(State).filter(State.name.like('%a%')).all()
 
-    # Hər birini tək-tək silirik
-    for state in states_to_delete:
+    # Hər birini silirik
+    for state in states:
         session.delete(state)
 
-    # Dəyişiklikləri yadda saxlayırıq
+    # Dəyişiklikləri commit edirik
     session.commit()
 
     # Sessiyanı bağlayırıq
