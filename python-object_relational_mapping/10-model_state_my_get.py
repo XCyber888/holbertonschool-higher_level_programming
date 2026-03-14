@@ -10,7 +10,7 @@ from model_state import Base, State
 
 
 if __name__ == "__main__":
-    # Engine yaradılır, sətir uzunluğuna (PEP8) diqqət edilir
+    # Engine yaradılır
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
@@ -18,10 +18,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # .filter() daxilində arqumentin işlənməsi
+    # Bazadan axtarış (SQL Injection-dan tam qorunmaq üçün filter istifadəsi)
     state = session.query(State).filter(State.name == sys.argv[4]).first()
 
-    # Nəticənin çapı
+    # Nəticənin çıxarılması
     if state is not None:
         print("{}".format(state.id))
     else:
