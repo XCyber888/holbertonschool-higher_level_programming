@@ -9,19 +9,16 @@ from model_state import Base, State
 
 
 if __name__ == "__main__":
-    # Engine və Session yaradılması
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Yalnız birinci ştatı id-yə görə sıralayıb çəkirik
-    first_state = session.query(State).order_by(State.id).first()
+    # .first() bizə obyektin özünü və ya None qaytarır
+    state = session.query(State).order_by(State.id).first()
 
-    # Əgər nəticə varsa çap edirik, yoxdursa "Nothing"
-    if first_state:
-        print("{}: {}".format(first_state.id, first_state.name))
+    if state:
+        print("{}: {}".format(state.id, state.name))
     else:
         print("Nothing")
 
