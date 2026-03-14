@@ -1,1 +1,14 @@
-#!/usr/bin/python3\n"""Lists all states from the database hbtn_0e_0_usa"""\n\nimport MySQLdb\nimport sys\n\nif __name__ == "__main__":\n    mysql_username = sys.argv[1]\n    mysql_password = sys.argv[2]\n    database_name = sys.argv[3]\n\n    db = MySQLdb.connect(\n        host="localhost",\n        port=3306,\n        user=mysql_username,\n        passwd=mysql_password,\n        db=database_name\n    )\n\n    cursor = db.cursor()\n    cursor.execute("SELECT * FROM states ORDER BY id ASC")\n    \n    rows = cursor.fetchall()\n    for row in rows:\n        print(row)\n    \n    cursor.close()\n    db.close()
+#!/usr/bin/python3
+"""Lists all states from the database hbtn_0e_0_usa"""
+import MySQLdb
+import sys
+
+if __name__ == "__main__":
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    db.close()
