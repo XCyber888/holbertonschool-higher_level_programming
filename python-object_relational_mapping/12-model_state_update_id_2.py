@@ -9,19 +9,21 @@ from model_state import Base, State
 
 
 if __name__ == "__main__":
-    # Engine və Session yaradılması
+    # Engine yaradılır
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    
+
+    # Session yaradılır
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # ID-si 2 olan ştatı tapırıq
-    state_to_update = session.query(State).filter(State.id == 2).first()
+    # ID-si 2 olan ştatı axtarırıq
+    state = session.query(State).filter(State.id == 2).first()
 
-    # Əgər tapılsa, adını dəyişib commit edirik
-    if state_to_update:
-        state_to_update.name = "New Mexico"
+    # Əgər ştat tapılsa, adını yeniləyirik
+    if state:
+        state.name = "New Mexico"
         session.commit()
 
+    # Sessiyanı bağlayırıq
     session.close()
