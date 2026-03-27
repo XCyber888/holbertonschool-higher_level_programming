@@ -1,1 +1,1 @@
-JavaScript Warm-up project
+JS Warm-up
